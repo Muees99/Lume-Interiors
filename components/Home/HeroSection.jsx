@@ -30,9 +30,11 @@ const HeroSection = () => {
             FOR YOUR INTERIOR SET-UP
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolorem facilis 
-            nisi ipsa molestias. Amet ipsum dolor sit consectetur adipisicing elit quibusdam.
-          </p>
+  At Lumé Interiors, we bring timeless design and modern functionality together to create spaces that inspire. 
+  From luxurious living rooms to elegant office spaces, our team transforms your vision into an experience — 
+  where every detail reflects comfort, creativity, and sophistication.
+</p>
+
           <Link href="/portfolio" passHref>
             <button className="bg-white text-black font-bold py-2 px-6 rounded-full hover:bg-opacity-80 transition duration-300">
               OUR PORTFOLIO
