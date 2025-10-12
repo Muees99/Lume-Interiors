@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-
+import Logo from "../../public/assets/logo.png"
 
 const Navbar = () => {
  
@@ -21,13 +21,13 @@ const Navbar = () => {
     <nav className="bg-gradient-to-r from-gray-800 to-gray-900 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center">
-          <Image src="https://i.ibb.co/t2MWDQB/AppIcon.png" alt="SolArt Logo" width={32} height={32} className="mr-2" />
+          <Image src={Logo} alt="SolArt Logo" width={32} height={32} className="mr-2" />
           <span className="text-xl font-bold">Lumé Interiors</span>
         </Link>
         <ul className="hidden md:flex space-x-6">
           {navItems.map((item) => (
             <li key={item.name}>
-              <Link href={item.href} className="hover:text-gray-300 transition duration-300">
+              <Link href={item.href} className="hover:text-gray-500 transition duration-300">
                 {item.name}
               </Link>
             </li>
