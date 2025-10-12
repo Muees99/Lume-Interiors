@@ -9,26 +9,26 @@ const ProjectPage = () => {
     {
       src: "https://images.unsplash.com/photo-1720876884400-fe4b13f8af72?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1073",
       alt: "Designer Dark House",
-      title: "Interior Design",
-      subtitle: "Woodland House Latvia",
+      title: "Exterior Design",
+      subtitle: "Woodland House",
     },
     {
       src: "https://images.unsplash.com/photo-1723639904352-5ade4702d86d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
-      alt: "Woodland House Latvia",
+      alt: "Woodland House",
       title: "Interior Design",
-      subtitle: "Woodland House Latvia",
+      subtitle: "Woodland House",
     },
     {
       src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1000&auto=format&fit=crop",
       alt: "Home Decor",
       title: "Home Decor",
-      subtitle: "Designer Dark House",
+      subtitle: "Open House View",
     },
     {
       src: "https://images.unsplash.com/photo-1593297779123-cee941f400c3?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1171",
       alt: "Urban Design",
       title: "Urban Design",
-      subtitle: "Designer Dark House",
+      subtitle: "Open House View",
     },
   ];
 
