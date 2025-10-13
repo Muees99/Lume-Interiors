@@ -67,7 +67,11 @@
  button {
    transition: all 0.3s ease;
  }
-
+/* Prevent stacking context issues */
+/* * {
+  transform-style: flat;
+  backface-visibility: hidden;
+} */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
