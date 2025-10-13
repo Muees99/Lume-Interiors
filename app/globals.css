@@ -2,29 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+ :root {
+   /* Set a clean typographic hierarchy */
+   --font-heading: var(--font-cinzel);
+   --font-subheading: var(--font-italiana);
+   --font-body: var(--font-outfit);
+ }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+ /* Base body style */
+ body {
+   background: var(--background);
+   color: var(--foreground);
+   font-family: var(--font-body), sans-serif;
+   line-height: 1.6;
+   font-weight: 400;
+ }
+
+ /* Headings */
+ h1,
+ h2,
+ h3 {
+   font-family: var(--font-heading), serif;
+   font-weight: 700;
+   letter-spacing: 0.5px;
+   text-transform: uppercase;
+ }
+
+ h4,
+ h5,
+ h6 {
+   font-family: var(--font-subheading), serif;
+   font-weight: 400;
+   letter-spacing: 0.3px;
+ }
+
+ /* Paragraphs */
+ p {
+   font-family: var(--font-body), sans-serif;
+   font-weight: 400;
+   /* light gray for readability on dark bg */
+   color: #d1d5db;
+   margin-bottom: 1rem;
+ }
+
+ /* Buttons */
+ button,
+ a,
+ input,
+ label {
+   font-family: var(--font-body), sans-serif;
+   font-weight: 500;
+   letter-spacing: 0.4px;
+ }
+
+ /* Optional subtle transitions for luxury feel */
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ p,
+ button {
+   transition: all 0.3s ease;
+ }
 
 @layer utilities {
   .text-balance {
