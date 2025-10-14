@@ -12,6 +12,14 @@ export type FooterLinkProps = {
   label: string;
 };
 
+// Define TalkModalProps
+export type TalkModalProps = {
+  isOpen: boolean;
+  onClose: () => void;
+  showModal: boolean;
+  setShowModal: (show: boolean) => void;
+};
+
 export interface StateContextProps {
   showMobileMenu: boolean;
   setShowMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;

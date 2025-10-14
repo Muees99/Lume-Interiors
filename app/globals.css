@@ -80,6 +80,24 @@
  nav a {
    letter-spacing: 0.5px;
  }
+
+ @keyframes pulse-dot {
+
+   0%,
+   100% {
+     transform: scale(1);
+     opacity: 0.8;
+   }
+
+   50% {
+     transform: scale(1.5);
+     opacity: 0.4;
+   }
+ }
+
+ .animate-dot {
+   animation: pulse-dot 1.5s infinite ease-in-out;
+ }
 @layer utilities {
   .text-balance {
     text-wrap: balance;
