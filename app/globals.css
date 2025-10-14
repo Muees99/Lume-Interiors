@@ -72,6 +72,14 @@
   transform-style: flat;
   backface-visibility: hidden;
 } */
+ header,
+ nav {
+   transition: all 0.4s ease-in-out;
+ }
+
+ nav a {
+   letter-spacing: 0.5px;
+ }
 @layer utilities {
   .text-balance {
     text-wrap: balance;

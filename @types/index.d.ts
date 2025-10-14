@@ -6,9 +6,7 @@ export type NavLinkProps = {
 };
 
 export type FooterLinkProps = {
-  company: any;
-  services: any;
-  resources: any;
+  ourServices: any;
   id?: number;
   link: string;
   label: string;

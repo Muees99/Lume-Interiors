@@ -14,8 +14,6 @@ const HeroSection = () => {
         objectFit="cover"
         quality={100}
         priority
-        // height={100}
-        // width={100}
       />
 
       {/* Overlay */}
@@ -25,7 +23,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 flex flex-col justify-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xl sm:text-2xl font-semibold text-white mb-2">
-            #1
+            No.1
           </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             WORLD CLASS DESIGN
@@ -51,6 +49,7 @@ const HeroSection = () => {
 
       {/* Decorative line */}
       <div className="absolute top-0 left-0 w-24 h-1 bg-white" />
+      {/* <div className="absolute top-0 right-0 w-24 h-1  bg-amber-300" /> */}
     </div>
   );
 };
