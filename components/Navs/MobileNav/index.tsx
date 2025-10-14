@@ -8,10 +8,15 @@ import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { BsX } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
+import TalkModal from "@/components/TalkModal";
+import { FaMicrophone } from "react-icons/fa";
+
+
 
 const MobileNav = () => {
   const { showMobileMenu, setShowMobileMenu } = useStateCtx();
   const [isActive, setIsActive] = useState("");
+  const [showModal, setShowModal] = useState(false);
   const searchParams = useSearchParams().get("path");
 
   useEffect(() => {
@@ -121,14 +126,27 @@ const MobileNav = () => {
               transition={{ delay: 0.4 }}
               className="mt-10 border-t border-gray-700 pt-6"
             >
-              <button
+              {/* <button
                 onClick={handleCloseMenu}
                 className="w-full bg-[#E0C097] text-black font-semibold py-3 rounded-full hover:bg-[#d6b68f] transition"
               >
                 Call Anytime
-              </button>
+              </button> */}
+              {/* Talk to Me Button */}
+                            <button
+                              onClick={() => setShowModal(true)}
+                              className="ml-6 flex items-center gap-2 bg-gradient-to-r from-[#7a7265] to-[#a59a86] text-black font-semibold px-6 py-2 rounded-full hover:bg-white transition-all duration-300 shadow-lg relative"
+                            >
+                              <FaMicrophone className="text-black" />
+                              <span>Talk to Me</span>
+                              <span className="absolute top-2 right-[-6] w-2 h-2 bg-green-500 rounded-full animate-dot"></span>
+                            </button>
             </motion.div>
           </motion.nav>
+          {/* Modal */}
+                  <TalkModal showModal={showModal} setShowModal={setShowModal} isOpen={false} onClose={function (): void {
+                      throw new Error("Function not implemented.");
+                  } } />
         </>
       )}
     </AnimatePresence>
