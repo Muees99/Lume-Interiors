@@ -1,14 +1,14 @@
 "use client";
 
-import { useStateCtx } from "@/context/StateContext";
-import { NAVLINKS } from "@/libs/constants";
-import cn from "@/app/utils/twcx";
+import { useStateCtx } from "@/../../context/StateContext";
+import { NAVLINKS } from "@/../../libs/constants";
+import cn from "@/../../app/utils/twcx";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { BsX } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
-import TalkModal from "@/components/TalkModal";
+import TalkModal from "../../TalkModal";
 import { FaMicrophone } from "react-icons/fa";
 
 
@@ -17,11 +17,22 @@ const MobileNav = () => {
   const { showMobileMenu, setShowMobileMenu } = useStateCtx();
   const [isActive, setIsActive] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const searchParams = useSearchParams().get("path");
+  // const searchParams = useSearchParams().get("path");
+  const searchParams = useSearchParams();
+  const path = searchParams.get("path");
 
+  // useEffect(() => {
+  //   if (searchParams) setIsActive(searchParams);
+  // }, [searchParams]);
+  // Track active path
   useEffect(() => {
-    if (searchParams) setIsActive(searchParams);
-  }, [searchParams]);
+    if (path) setIsActive(path);
+  }, [path]);
+
+  // Track active path
+  useEffect(() => {
+    if (path) setIsActive(path);
+  }, [path]);
 
   // Disable body scroll when mobile nav is open
   useEffect(() => {
@@ -133,20 +144,25 @@ const MobileNav = () => {
                 Call Anytime
               </button> */}
               {/* Talk to Me Button */}
-                            <button
-                              onClick={() => setShowModal(true)}
-                              className="ml-6 flex items-center gap-2 bg-gradient-to-r from-[#7a7265] to-[#a59a86] text-black font-semibold px-6 py-2 rounded-full hover:bg-white transition-all duration-300 shadow-lg relative"
-                            >
-                              <FaMicrophone className="text-black" />
-                              <span>Talk to Me</span>
-                              <span className="absolute top-2 right-[-6] w-2 h-2 bg-green-500 rounded-full animate-dot"></span>
-                            </button>
+              <button
+                onClick={() => setShowModal(true)}
+                className="ml-6 flex items-center gap-2 bg-gradient-to-r from-[#7a7265] to-[#a59a86] text-black font-semibold px-6 py-2 rounded-full hover:bg-white transition-all duration-300 shadow-lg relative"
+              >
+                <FaMicrophone className="text-black" />
+                <span>Talk to Me</span>
+                <span className="absolute top-2 right-[-6] w-2 h-2 bg-green-500 rounded-full animate-dot"></span>
+              </button>
             </motion.div>
           </motion.nav>
           {/* Modal */}
-                  <TalkModal showModal={showModal} setShowModal={setShowModal} isOpen={false} onClose={function (): void {
-                      throw new Error("Function not implemented.");
-                  } } />
+          <TalkModal
+            showModal={showModal}
+            setShowModal={setShowModal}
+            isOpen={false}
+            onClose={function (): void {
+              throw new Error("Function not implemented.");
+            }}
+          />
         </>
       )}
     </AnimatePresence>

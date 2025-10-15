@@ -5,31 +5,37 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars } from "react-icons/fa";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useStateCtx } from "@/context/StateContext";
-import cn from "@/app/utils/twcx";
-import { NAVLINKS } from "@/libs/constants";
+import { useStateCtx } from "../../../context/StateContext";
+import cn from "../../../app/utils/twcx";
+import { NAVLINKS } from "../../../libs/constants";
 import MobileNav from "../MobileNav";
-import Logo from "@/public/assets/logo.png";
+import Logo from "../../../public/assets/logo.png"
 import { FaMicrophone } from "react-icons/fa";
-import TalkModal from "@/components/TalkModal";
+import TalkModal from "../../TalkModal";
 
 const Navbar = () => {
   const router = useRouter();
   const { showMobileMenu, setShowMobileMenu } = useStateCtx();
   const [showModal, setShowModal] = useState(false);
-  const searchParams = useSearchParams().get("path");
   const [isActive, setIsActive] = useState("");
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [scrolled, setScrolled] = useState(false);
+  // const searchParams = useSearchParams().get("path");
+  const searchParams = useSearchParams();
+  const path = searchParams.get("path");
+
 
 
   // detect page change for active state
+  // useEffect(() => {
+  //   if (searchParams) {
+  //     setIsActive(searchParams);
+  //   }
+  // }, [searchParams]);
   useEffect(() => {
-    if (searchParams) {
-      setIsActive(searchParams);
-    }
-  }, [searchParams]);
+      if (path) setIsActive(path);
+    }, [path]);
 
   // hide/reveal on scroll
   useEffect(() => {
@@ -122,14 +128,18 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Nav */}
+            {/* {MobileNav("arg1", "arg2", "arg3")} */}
             <MobileNav />
           </nav>
           {/* Modal */}
           <TalkModal
             showModal={showModal}
-            setShowModal={setShowModal} isOpen={false} onClose={function (): void {
-              throw new Error("Function not implemented.");
-            } }          />
+            setShowModal={setShowModal}
+            isOpen={false}
+            onClose={function (): void {
+              // throw new Error("Function not implemented.");
+            }}
+          />
         </motion.header>
       )}
     </AnimatePresence>

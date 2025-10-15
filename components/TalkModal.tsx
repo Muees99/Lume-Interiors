@@ -59,12 +59,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaMicrophone, FaTimes } from "react-icons/fa";
-import { TalkModalProps } from "@/@types";
-// // Define TalkModalProps locally
-// type TalkModalProps = {
-//   showModal: boolean;
-//   setShowModal: (show: boolean) => void;
-// };
+import { TalkModalProps } from "../@types";
 
 const TalkModal = ({ showModal, setShowModal }: TalkModalProps) => {
   const [micStatus, setMicStatus] = useState<"idle" | "pending" | "granted" | "denied">("idle");
