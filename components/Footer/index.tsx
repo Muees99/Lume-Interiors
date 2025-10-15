@@ -7,10 +7,9 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { MdArrowForward } from "react-icons/md";
-import Logoo from "@/public/assets/Logoo.png";
-import { FOOTER_LINKS } from "@/libs/constants";
+import Logoo from "../../public/assets/Logoo.png";
+import { FOOTER_LINKS } from "@/../../libs/constants";
 import Link from "next/link";
-import cn from "@/app/utils/twcx";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { outfit, italiana,cinzel } from "./font";
 import "./globals.css";
 import StateProvider from "../context/StateContext";
-import Navbar from "@/components/Navs/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "../components/Navs/Navbar";
+import Footer from "../components/Footer";
 import React from "react";
 
 
