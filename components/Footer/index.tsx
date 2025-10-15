@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import Image from "next/image";
 import {
   FaFacebookF,
@@ -9,10 +10,13 @@ import {
 import { MdArrowForward } from "react-icons/md";
 import Logoo from "../../public/assets/Logoo.png";
 import { FOOTER_LINKS } from "@/../../libs/constants";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  // Track selected image
+  const [selectedImg, setSelectedImg] = useState<string | null>(null);
 
   const sections = [{ title: "Our Services", links: FOOTER_LINKS.ourServices }];
 
@@ -140,6 +144,44 @@ const Footer = () => {
           © {currentYear} Lumé Interiors. All Rights Reserved.
         </div>
       </div>
+      {/* Pop-out Image Modal */}
+      <AnimatePresence>
+        {selectedImg && (
+          <>
+            {/* Overlay */}
+            <motion.div
+              className="fixed inset-0 bg-black/80 z-[999]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedImg(null)}
+            />
+            {/* Image */}
+            <motion.div
+              className="fixed inset-0 flex items-center justify-center z-[1000]"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+            >
+              <div className="relative">
+                <Image
+                  src={selectedImg}
+                  alt="Selected project"
+                  width={700}
+                  height={500}
+                  className="rounded-lg object-contain max-h-[80vh] max-w-[90vw] shadow-lg"
+                />
+                <button
+                  onClick={() => setSelectedImg(null)}
+                  className="absolute top-2 right-2 bg-white/80 hover:bg-white text-black px-3 py-1 rounded-full font-semibold"
+                >
+                  ✕
+                </button>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </footer>
   );
 };
