@@ -14,7 +14,7 @@ import {
 } from "react-icons/fa";
 
 const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxnN7PjDfK4OoIizYDhu_5XpZZuwvHRk10YyDDqxfuN0wmZ8zg0rX55hpGmBcyWN4pj/exec";
+  "https://script.google.com/macros/s/AKfycbyWV4MDIrdcji2_HztmjI42MDs0X4MLuoFz6CTi8bHi4rTp-lq6_e-qTJpwt8OcamqP/exec";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -68,9 +68,13 @@ const ContactPage = () => {
 
     try {
       const form = e.target as HTMLFormElement;
+
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
-        body: new FormData(form),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
@@ -202,18 +206,6 @@ const ContactPage = () => {
               </motion.button>
             </div>
 
-            {/* <AnimatePresence>
-              {success && (
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="text-center text-[#B98E75] mt-6 font-medium"
-                >
-                  Message sent successfully — we’ll get back to you soon!
-                </motion.p>
-              )}
-            </AnimatePresence> */}
             {/* ✅ GOLD SUCCESS CHECKMARK ANIMATION */}
             <AnimatePresence>
               {success && (
@@ -294,7 +286,7 @@ const ContactPage = () => {
                 </li>
                 <li className="flex items-center">
                   <FaMapMarkerAlt className="text-[#B98E75] mr-3" /> 24 King St,
-                 Hartford,Connecticut USA.
+                  Hartford,Connecticut USA.
                 </li>
               </ul>
 
