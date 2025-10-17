@@ -46,7 +46,7 @@ export default function ArticleContent({ article }: { article: any }) {
           className="max-w-3xl mx-auto text-gray-700 font-serif text-lg leading-relaxed tracking-wide"
         >
           {article.content?.split("\n").map((para: string, i: number) => (
-            <p key={i} className="mb-6">
+            <p key={i} className="mb-6 text-gray-700">
               {para}
             </p>
           ))}
