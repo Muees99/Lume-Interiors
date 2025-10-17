@@ -398,83 +398,185 @@
 // }
 
 
+// import Link from "next/link";
+// import Image from "next/image";
+// import { projects } from "./projectData";
+
+// export default function ProjectsPage() {
+//   const grouped = {
+//     past: projects.filter((p) => p.category === "Past Project"),
+//     ongoing: projects.filter((p) => p.category === "Ongoing Project"),
+//     recent: projects.filter((p) => p.category === "Recent Project"),
+//   };
+
+//   return (
+//     <section className="max-w-7xl mx-auto px-6 py-24">
+//       <h1 className="text-4xl md:text-6xl font-cinzel font-bold text-[#B98E75] text-center mb-6">
+//         Our Projects
+//       </h1>
+//       <p className="mt-6 max-w-2xl mx-auto text-lg text-gray-600 text-center mb-16">
+//         Explore our completed, ongoing, and newly launched projects — showcasing
+//         creativity, growth, and industry innovation.
+//       </p>
+
+//       {Object.entries(grouped).map(([key, group]) => (
+//         <div key={key} className="mb-20">
+//           <h2 className="text-3xl font-semibold text-gray-400 mb-10 capitalize">
+//             {key} Projects
+//           </h2>
+//           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+//             {group.map((project) => (
+//               <div
+//                 key={project.slug}
+//                 className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition-all"
+//               >
+//                 <div className="relative h-56">
+//                   <Image
+//                     src={project.image}
+//                     alt={project.title}
+//                     fill
+//                     className="object-cover"
+//                   />
+//                 </div>
+//                 <div className="p-6">
+//                   <h3 className="text-2xl font-semibold text-gray-800 mb-2">
+//                     {project.title}
+//                   </h3>
+//                   <p className="text-sm text-gray-500 mb-2">{project.date}</p>
+//                   <p className="text-gray-600 mb-3">{project.description}</p>
+//                   <p className="font-semibold text-gray-700 mb-4">
+//                     Estimated Cost: <span className="text-green-600">{project.cost}</span>
+//                   </p>
+//                   <Link
+//                     href={`/projects/${project.slug}`}
+//                     className="inline-block text-sm px-5 py-2  bg-gradient-to-r from-[#7a7265] to-[#a59a86] text-black font-semibold  rounded-full transition"
+//                   >
+//                     Learn More →
+//                   </Link>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       ))}
+//       {/* 🟩 CTA Section */}
+//       <div className="bg-gray-100 py-12 text-center rounded-2xl mt-20">
+//         <h2 className="text-3xl font-semibold mb-4 text-gray-800">
+//           Interested in Building or Buying a Similar Project?
+//         </h2>
+//         <p className="text-gray-600 mb-6 max-w-xl mx-auto">
+//           Let’s bring your vision to life. Reach out to us today to start your next
+//           architectural or interior journey.
+//         </p>
+//         <Link
+//           href="/contact"
+//           className="bg-gradient-to-r from-[#7a7265] to-[#a59a86] text-black font-semibold  px-6 py-3 rounded-full hover:bg-blue-700 transition"
+//         >
+//           Contact Us
+//         </Link>
+//       </div>
+//     </section>
+//   );
+// }
+
+
+"use client";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { projects } from "./projectData";
 
 export default function ProjectsPage() {
-  const grouped = {
-    past: projects.filter((p) => p.category === "Past Project"),
-    ongoing: projects.filter((p) => p.category === "Ongoing Project"),
-    recent: projects.filter((p) => p.category === "Recent Project"),
+  const groupedProjects = {
+    past: projects.filter((p) => p.category === "past"),
+    ongoing: projects.filter((p) => p.category === "ongoing"),
+    recent: projects.filter((p) => p.category === "recent"),
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-24">
-      <h1 className="text-4xl md:text-6xl font-cinzel font-bold text-[#B98E75] text-center mb-6">
-        Our Projects
-      </h1>
-      <p className="mt-6 max-w-2xl mx-auto text-lg text-gray-600 text-center mb-16">
-        Explore our completed, ongoing, and newly launched projects — showcasing
-        creativity, growth, and industry innovation.
-      </p>
-
-      {Object.entries(grouped).map(([key, group]) => (
-        <div key={key} className="mb-20">
-          <h2 className="text-3xl font-semibold text-gray-400 mb-10 capitalize">
-            {key} Projects
-          </h2>
-          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-            {group.map((project) => (
-              <div
-                key={project.slug}
-                className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition-all"
-              >
-                <div className="relative h-56">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-gray-500 mb-2">{project.date}</p>
-                  <p className="text-gray-600 mb-3">{project.description}</p>
-                  <p className="font-semibold text-gray-700 mb-4">
-                    Estimated Cost: <span className="text-green-600">{project.cost}</span>
-                  </p>
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="inline-block text-sm px-5 py-2  bg-gradient-to-r from-[#7a7265] to-[#a59a86] text-black font-semibold  rounded-full transition"
-                  >
-                    Learn More →
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
-      {/* 🟩 CTA Section */}
-      <div className="bg-gray-100 py-12 text-center rounded-2xl mt-20">
-        <h2 className="text-3xl font-semibold mb-4 text-gray-800">
-          Interested in Building or Buying a Similar Project?
-        </h2>
-        <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-          Let’s bring your vision to life. Reach out to us today to start your next
-          architectural or interior journey.
+    <section className="min-h-screen bg-[#f9f6f3] py-20 px-6 md:px-20">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="max-w-6xl mx-auto"
+      >
+        <h1 className="text-4xl md:text-5xl font-cinzel text-gray-800 text-center mb-4">
+          Our Projects
+        </h1>
+        <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+          Explore our portfolio — from past architectural successes to ongoing
+          innovations and newly discovered projects shaping the future of
+          design.
         </p>
-        <Link
-          href="/contact"
-          className="bg-gradient-to-r from-[#7a7265] to-[#a59a86] text-black font-semibold  px-6 py-3 rounded-full hover:bg-blue-700 transition"
-        >
-          Contact Us
-        </Link>
-      </div>
+
+        {Object.entries(groupedProjects).map(([category, items]) => (
+          <div key={category} className="mb-20">
+            <h2 className="text-3xl font-cinzel text-[#B98E75] mb-8 capitalize">
+              {category} Projects
+            </h2>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {items.map((project) => (
+                <motion.div
+                  key={project.slug}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-white rounded-2xl overflow-hidden shadow-lg"
+                >
+                  <div className="relative w-full h-64">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+
+                  <div className="p-6">
+                    <h3 className="text-2xl font-cinzel mb-3 text-gray-800">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 line-clamp-3">
+                      {project.description}
+                    </p>
+
+                    <div className="flex justify-between text-sm text-gray-500 mb-4">
+                      <span>💰 {project.cost}</span>
+                      <span>📍 {project.location}</span>
+                    </div>
+
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="inline-block bg-[#B98E75] text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-[#a27b66] transition-all"
+                    >
+                      Learn More →
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        {/* Call to Action */}
+        <div className="bg-[#B98E75] mt-20 py-14 px-8 rounded-3xl text-center text-white shadow-2xl">
+          <h3 className="text-3xl font-cinzel mb-4">
+            Love what you see? Let’s build something together.
+          </h3>
+          <p className="max-w-2xl mx-auto mb-8 text-lg">
+            Whether you’re looking to buy a similar property or build your
+            dream project, our team will bring your vision to life.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block bg-white text-[#B98E75] font-semibold px-8 py-3 rounded-full hover:bg-[#f9f6f3] transition-all"
+          >
+            Contact Us →
+          </Link>
+        </div>
+      </motion.div>
     </section>
   );
 }
