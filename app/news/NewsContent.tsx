@@ -83,49 +83,6 @@ export default function NewsContent() {
       {/* Articles Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
         {articles.map((article, index) => (
-          //   <motion.div
-          //     key={article.slug}
-          //     whileInView={{ opacity: 1, y: 0 }}
-          //     initial={{ opacity: 0, y: 80 }}
-          //     transition={{ duration: 0.7, delay: index * 0.1 }}
-          //     viewport={{ once: true, amount: 0.2 }}
-          //     className="bg-white/90 border border-[#eae6e1] rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
-          //   >
-          //     {/* Image */}
-          //     <div className="relative w-full h-64 overflow-hidden">
-          //       <Image
-          //         src={article.image}
-          //         alt={article.title}
-          //         fill
-          //         className="object-cover transition-transform duration-700 hover:scale-105"
-          //       />
-          //     </div>
-
-          //     {/* Content */}
-          //     <div className="p-8 flex flex-col justify-between h-full">
-          //       <div>
-          //         <p className="text-sm text-gray-500 italic mb-3">
-          //           {article.date}
-          //         </p>
-          //         <h2 className="text-2xl font-semibold text-gray-800 hover:text-[#B98E75] mb-3 leading-snug">
-          //           {article.title}
-          //         </h2>
-          //         <p className="text-gray-600 text-base leading-relaxed mb-6">
-          //           {article.description}
-          //         </p>
-          //       </div>
-
-          //       {/* Learn More Button */}
-          //       <div className="text-left mt-auto">
-          //         <Link
-          //           href={`/news/${article.slug}`}
-          //           className="inline-block px-7 py-3 bg-[#B98E75] text-white rounded-full font-medium shadow-sm hover:bg-[#a27b66] transition-transform duration-300 hover:scale-105"
-          //         >
-          //           Learn More →
-          //         </Link>
-          //       </div>
-          //     </div>
-          //   </motion.div>
           <motion.div
             key={article.slug}
             whileInView={{ opacity: 1, y: 0 }}
