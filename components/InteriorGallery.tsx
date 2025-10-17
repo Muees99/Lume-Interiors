@@ -34,7 +34,7 @@ const ProjectPage = () => {
 
   return (
     <div className="container mx-auto p-4 text-center">
-      <h2 className="text-3xl sm:text-4xl font-semibold text-gray-800 mb-8">
+      <h2 className="text-3xl sm:text-4xl font-semibold text-gray-500 mb-8">
         Featured Interior Design Projects
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
