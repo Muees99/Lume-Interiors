@@ -81,10 +81,10 @@ export default function ProjectsPage() {
         {/* Call to Action */}
         <div className="bg-[#B98E75] mt-20 py-14 px-8 rounded-3xl text-center text-white shadow-2xl">
           <h3 className="text-3xl font-cinzel mb-4">
-            Love what you see? Let’s build something together.
+            Love what you see? Let&apos;s build something together.
           </h3>
           <p className="max-w-2xl mx-auto mb-8 text-lg">
-            Whether you’re looking to buy a similar property or build your
+            Whether you&apos;re looking to buy a similar property or build your
             dream project, our team will bring your vision to life.
           </p>
           <Link
@@ -98,3 +98,20 @@ export default function ProjectsPage() {
     </section>
   );
 }
+
+
+
+
+
+// app/architecture/page.tsx
+// import { Suspense } from 'react';
+// import ArchitecturePageContent from './ArchitecturePageContent';
+
+// export default function ArchitecturePage() {
+//   return (
+//     <Suspense fallback={<div>Loading...</div>}>
+//       <ArchitecturePageContent />
+//     </Suspense>
+//   );
+// }
+

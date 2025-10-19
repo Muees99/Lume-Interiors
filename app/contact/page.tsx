@@ -117,7 +117,7 @@ const ContactPage = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-cinzel tracking-wide text-gray-800">
-            Let’s Create Something Timeless
+            Let&apos;s Create Something Timeless
           </h1>
           <p className="text-gray-500 mt-4 text-lg italic">
             Every great space begins with a conversation.
@@ -248,7 +248,7 @@ const ContactPage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-[#B98E75] mt-4 font-medium text-lg"
                   >
-                    Message sent successfully — we’ll be in touch soon!
+                    Message sent successfully — we&apos;ll be in touch soon!
                   </motion.p>
                 </motion.div>
               )}
@@ -282,7 +282,7 @@ const ContactPage = () => {
                 </li>
                 <li className="flex items-center">
                   <FaEnvelope className="text-[#B98E75] mr-3" />{" "}
-                  hello@lumeinteriors.com
+                  muees99consult@gmail.com
                 </li>
                 <li className="flex items-center">
                   <FaMapMarkerAlt className="text-[#B98E75] mr-3" /> 24 King St,

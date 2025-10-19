@@ -103,8 +103,8 @@ export const architectureProjects: ArchitectureProject[] = [
       Built for modern families, it’s a blueprint for sustainable residential development in West Africa.
     `,
     gallery: [
-      "https://images.unsplash.com/photo-1714114931959-a1ed97bc530b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074",
       "https://images.unsplash.com/photo-1628301764672-c90a7591eb33?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
+      "https://images.unsplash.com/photo-1714114931959-a1ed97bc530b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074",
       "https://images.unsplash.com/photo-1558931055-a688d67f803b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1333",
       "https://images.unsplash.com/photo-1656922141289-cb26d91f98be?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
     ],

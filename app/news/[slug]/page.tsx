@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { notFound } from "next/navigation";
 import { generateStaticParams, generateMetadata, articles } from "./utils";
 import ArticleContent from "./ArticleContent";

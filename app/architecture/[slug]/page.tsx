@@ -1,4 +1,6 @@
 "use client";
+export const dynamic = "force-dynamic";
+
 
 import { getArchitectureBySlug } from "../ArchitectureData";
 import { notFound, useParams } from "next/navigation";
@@ -139,8 +141,8 @@ export default function ArchitectureDetailPage() {
             Interested in Building a Similar Project?
           </h2>
           <p className="text-lg mb-6 max-w-2xl mx-auto">
-            Let’s collaborate to bring architectural innovation and functional
-            beauty to your space.
+            Let&apos;s collaborate to bring architectural innovation and
+            functional beauty to your space.
           </p>
           <Link
             href="/contact"

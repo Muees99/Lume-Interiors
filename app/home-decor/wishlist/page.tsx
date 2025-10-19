@@ -25,7 +25,7 @@ export default function WishlistPage() {
       <h1 className="text-4xl font-cinzel text-gray-800 mb-10">Wishlist</h1>
 
       {liked.length === 0 ? (
-        <p className="text-gray-600">You haven’t liked any items yet.</p>
+        <p className="text-gray-600">You haven&apos;t liked any items yet.</p>
       ) : (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
           {liked.map((item) => (

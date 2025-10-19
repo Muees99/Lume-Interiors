@@ -5,8 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { architectureProjects } from "./ArchitectureData";
 
-
-
 export default function ArchitecturePage() {
   return (
     <section className="min-h-screen bg-[#f9f6f3] py-20 px-6 md:px-16">
@@ -76,14 +74,6 @@ export default function ArchitecturePage() {
                   {project.reason}
                 </p>
               </div>
-              {/* <Link
-                href={`/architecture/${encodeURIComponent(
-                  project.title.toLowerCase().replace(/\s+/g, "-")
-                )}`}
-                className="inline-block bg-[#B98E75] text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-[#a27b66] transition-all duration-300"
-              >
-                View Project →
-              </Link> */}
               <Link
                 href={`/architecture/${project.slug}`}
                 className="inline-block bg-[#B98E75] text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-[#a27b66] transition-all duration-300"
@@ -107,9 +97,9 @@ export default function ArchitecturePage() {
           Want to Build or Buy a Similar Project?
         </h2>
         <p className="text-lg mb-8 max-w-2xl mx-auto">
-          Whether you’re envisioning a private residence, corporate complex, or
-          modern estate — our architects, engineers, and partners are ready to
-          bring your dream to life with precision and creativity.
+          Whether you&apos;re envisioning a private residence, corporate
+          complex, or modern estate — our architects, engineers, and partners
+          are ready to bring your dream to life with precision and creativity.
         </p>
         <Link
           href="/contact"
@@ -121,3 +111,5 @@ export default function ArchitecturePage() {
     </section>
   );
 }
+
+

@@ -1,12 +1,3 @@
-// "use client";
-
-// import React, { useState, useEffect } from "react";
-// import { motion } from "framer-motion";
-// import Image from "next/image";
-// import Link from "next/link";
-// import { Heart, ShoppingCart, Search, Filter } from "lucide-react";
-// import { decorItems, DecorItem } from "./decorItems";
-
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -39,10 +30,6 @@ export default function HomeDecorPage() {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-//   const categories = [
-//     "All",
-//     ...new Set(decorItems.map((item) => item.category)),
-//   ];
 const categories = [
   "All",
   ...Array.from(new Set<string>(decorItems.map((item) => item.category))),
@@ -92,7 +79,7 @@ const categories = [
             placeholder="Search for decor..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-[#B98E75]"
+            className="w-full pl-12 pr-4 py-3 border text-gray-400 border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-[#B98E75]"
           />
         </div>
 
@@ -102,7 +89,7 @@ const categories = [
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="border border-gray-300 rounded-full px-4 py-2 focus:ring-2 focus:ring-[#B98E75]"
+            className="border border-gray-300   text-gray-400 rounded-full px-4 py-2 focus:ring-2 focus:ring-[#B98E75]"
           >
             {categories.map((cat) => (
               <option key={cat} value={cat}>
@@ -176,7 +163,7 @@ const categories = [
                 </h2>
               </Link> */}
               <Link href={`/home-decor/${item.id}`}>
-                <div className="relative w-full h-40 mb-4 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                <div className="relative w-full  mb-4 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
                   <Image
                     src={item.image}
                     alt={item.name}
