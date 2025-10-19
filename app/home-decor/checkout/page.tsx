@@ -36,16 +36,10 @@ export default function CheckoutPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    //     // simulate form submission delay
-    //     setTimeout(() => {
-    //       setIsSubmitting(false);
-    //       alert("✅ Your order has been placed successfully!");
-    //       router.push("/decor");
-    //     }, 2000);
-    //   };
     // Simulate form submission delay
     setTimeout(() => {
       setIsSubmitting(false);
+      //    alert("✅ Your order has been placed successfully!");
       setShowCheckout(true); // ✅ Show modal instead of alert
     }, 2000);
   };
@@ -130,7 +124,7 @@ export default function CheckoutPage() {
               name="payment"
               value={form.payment}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 bg-slate-300 focus:ring-black focus:outline-none"
+              className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 bg-[#e8c9b8] text-slate-900 focus:ring-black focus:outline-none"
             >
               <option value="card">Credit / Debit Card</option>
               <option value="bank">Bank Transfer</option>

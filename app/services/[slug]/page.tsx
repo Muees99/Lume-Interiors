@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { notFound } from "next/navigation";
 import ServiceContent from "./ServicesContent";
 
@@ -41,7 +43,8 @@ const services = [
     description:
       "Our project managers oversee every detail, ensuring timely delivery and budget adherence.",
     costEstimate: "$5,000 - $15,000",
-    image: "https://images.unsplash.com/photo-1722501106404-6ce75d0ead53?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+    image:
+      "https://images.unsplash.com/photo-1722501106404-6ce75d0ead53?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
   },
 
   {
@@ -51,7 +54,8 @@ const services = [
     description:
       "Long-term maintenance plans that ensure your facilities remain in top shape.",
     costEstimate: "$1,000 - $5,000 per month",
-    image: "https://images.unsplash.com/photo-1719050817004-c76eb7c75c99?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1058",
+    image:
+      "https://images.unsplash.com/photo-1719050817004-c76eb7c75c99?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1058",
   },
   {
     title: "Facility Support",
@@ -60,7 +64,8 @@ const services = [
     description:
       "Long-term maintenance plans that ensure your facilities remain in top shape.",
     costEstimate: "$1,000 - $5,000 per month",
-   image: "https://images.unsplash.com/photo-1614805137281-8adea8f3967e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=682",
+    image:
+      "https://images.unsplash.com/photo-1614805137281-8adea8f3967e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=682",
   },
   // ...rest of your services
 ];
