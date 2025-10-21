@@ -14,7 +14,7 @@ interface ServiceProps {
   };
 }
 
-const ServiceContent: React.FC<ServiceProps> = ({ service }) => {
+const ServicesContent: React.FC<ServiceProps> = ({ service }) => {
   return (
     <section className="min-h-screen bg-[#f9f6f3] py-16 px-6 md:px-20">
       <Link
@@ -63,4 +63,4 @@ const ServiceContent: React.FC<ServiceProps> = ({ service }) => {
   );
 };
 
-export default ServiceContent;
+export default ServicesContent;
