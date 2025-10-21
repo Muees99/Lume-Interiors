@@ -1,5 +1,67 @@
+// // export const dynamic = "force-dynamic";
+// "use client";
+
+// import { notFound } from "next/navigation";
+// import { projects, getProjectBySlug } from "../projectData";
+// import ProjectContent from "./ProjectContent";
+
+// export async function generateStaticParams() {
+//   return projects.map((p) => ({ slug: p.slug }));
+// }
+
+// export function generateMetadata({ params }: { params: { slug: string } }) {
+//   const project = getProjectBySlug(params.slug);
+//   if (!project) return { title: "Project Not Found" };
+//   return {
+//     title: `${project.title} | Lumé Interiors`,
+//     description: project.description,
+//   };
+// }
+
+// export default function ProjectPage({ params }: { params: { slug: string } }) {
+//   const project = getProjectBySlug(params.slug);
+//   if (!project) return notFound();
+
+//   return <ProjectContent project={project} />;
+// }
+
+
+
+// DO NOT make this a client file
 // export const dynamic = "force-dynamic";
 
+// import { notFound } from "next/navigation";
+// import { projects, getProjectBySlug } from "../projectData";
+// import ProjectContent from "./ProjectContent";
+
+// export async function generateStaticParams() {
+//   return projects.map((p) => ({ slug: p.slug }));
+// }
+
+// export function generateMetadata({ params }: { params: { slug: string } }) {
+//   const project = getProjectBySlug(params.slug);
+//   if (!project) return { title: "Project Not Found" };
+//   return {
+//     title: `${project.title} | Lumé Interiors`,
+//     description: project.description,
+//   };
+// }
+
+// export default function ProjectPage({ params }: { params: { slug: string } }) {
+//   const project = getProjectBySlug(params.slug);
+//   if (!project) return notFound();
+
+//   // ✅ Keep this simple – pass data to a client component
+//   return <ProjectContent project={project} />;
+// }
+
+
+
+// app/projects/[slug]/page.tsx
+
+
+// app/projects/[slug]/page.tsx
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { projects, getProjectBySlug } from "../projectData";
 import ProjectContent from "./ProjectContent";
@@ -21,5 +83,18 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   const project = getProjectBySlug(params.slug);
   if (!project) return notFound();
 
-  return <ProjectContent project={project} />;
+  return (
+    <Suspense
+      fallback={
+        <div className="flex flex-col items-center justify-center h-[80vh] text-gray-500">
+          <div className="w-16 h-16 border-4 border-[#B98E75] border-t-transparent rounded-full animate-spin mb-4"></div>
+          <p className="text-lg font-medium">
+            Loading project details...
+          </p>
+        </div>
+      }
+    >
+      <ProjectContent project={project} />
+    </Suspense>
+  );
 }
