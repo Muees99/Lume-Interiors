@@ -1,7 +1,8 @@
+export const dynamic = "force-dynamic";
+
 import { notFound } from "next/navigation";
 import { projects, getProjectBySlug } from "../projectData";
 import ProjectContent from "./ProjectContent";
-
 
 export async function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
