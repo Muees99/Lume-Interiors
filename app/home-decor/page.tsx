@@ -206,12 +206,32 @@
 // }
 
 
+// "use client";
+// export const dynamic = "force-dynamic";
+
+
+// import React, { Suspense } from "react";
+// import HomeDecorContent from "./HomeDecorContent";
+
+// export default function HomeDecorPage() {
+//   return (
+//     <Suspense
+//       fallback={
+//         <div className="flex justify-center items-center min-h-[70vh]">
+//           <div className="w-10 h-10 border-4 border-[#B98E75] border-t-transparent rounded-full animate-spin" />
+//         </div>
+//       }
+//     >
+//       <HomeDecorContent />
+//     </Suspense>
+//   );
+// }
+
+
 "use client";
-export const dynamic = "force-dynamic";
+import { Suspense, lazy } from "react";
 
-
-import React, { Suspense } from "react";
-import HomeDecorContent from "./HomeDecorContent";
+const HomeDecorContent = lazy(() => import("./HomeDecorContent"));
 
 export default function HomeDecorPage() {
   return (
