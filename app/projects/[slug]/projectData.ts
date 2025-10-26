@@ -12,7 +12,7 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  // 🏗️ Past Projects
+  // Past Projects
   {
     slug: "lagos-modern-villa",
     title: "Lagos Modern Villa",
@@ -125,7 +125,7 @@ export const projects: Project[] = [
     ],
   },
 
-  // 🔨 Ongoing Projects
+  // Ongoing Projects
   {
     slug: "eko-tower-redesign",
     title: "Eko Tower Redesign",
@@ -163,7 +163,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "lagos-tech-hub",
+    slug: "warehouse-hub",
     title: " Warehouse Hub",
     category: "ongoing",
     date: "Ongoing (5 months left)",
@@ -237,7 +237,7 @@ export const projects: Project[] = [
     ],
   },
 
-  // 🆕 Recent Projects
+  // Recent Projects
   {
     slug: "abuja-luxury-hotel-main",
     title: "Abuja Luxury Hotel",
@@ -329,7 +329,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: " tennis-court-complex",
+    slug: "tennis-court-complex",
     title: "Tennis Court Complex",
     category: "recent",
     date: "Initiated: October 2025",
@@ -348,9 +348,9 @@ export const projects: Project[] = [
   },
 ];
 
-
 export function getProjectBySlug(slug: string) {
-  return projects.find((p) => p.slug === slug);
+  const matches = projects.filter((p) => p.slug === slug);
+  return matches.length > 0 ? matches[0] : null;
 }
 
 export async function generateStaticParams() {
