@@ -39,9 +39,9 @@ const HeroSection = () => {
             sophistication.
           </p>
 
-          <Link href="/portfolio" passHref>
+          <Link href="/projects" passHref>
             <button className="bg-white text-black font-bold py-2 px-6 rounded-full hover:bg-opacity-80 transition duration-300">
-              OUR PORTFOLIO
+              OUR PROJECTS
             </button>
           </Link>
         </div>
