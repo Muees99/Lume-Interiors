@@ -7,7 +7,6 @@
 // import { Heart, ShoppingCart, Search, Filter } from "lucide-react";
 // import { decorItems, DecorItem } from "./decorItems";
 
-
 // export default function HomeDecorPage() {
 //   const [search, setSearch] = useState("");
 //   const [likedItems, setLikedItems] = useState<number[]>([]);
@@ -34,7 +33,6 @@
 //   "All",
 //   ...Array.from(new Set<string>(decorItems.map((item) => item.category))),
 // ];
-
 
 //   const filteredItems = decorItems.filter((item) => {
 //     const matchCategory = category === "All" || item.category === category;
@@ -205,10 +203,8 @@
 //   );
 // }
 
-
 // "use client";
 // export const dynamic = "force-dynamic";
-
 
 // import React, { Suspense } from "react";
 // import HomeDecorContent from "./HomeDecorContent";
@@ -227,11 +223,29 @@
 //   );
 // }
 
+// "use client";
+// import { Suspense, lazy } from "react";
 
-"use client";
-import { Suspense, lazy } from "react";
+// const HomeDecorContent = lazy(() => import("./HomeDecorContent"));
 
-const HomeDecorContent = lazy(() => import("./HomeDecorContent"));
+// export default function HomeDecorPage() {
+//   return (
+//     <Suspense
+//       fallback={
+//         <div className="flex justify-center items-center min-h-[70vh]">
+//           <div className="w-10 h-10 border-4 border-[#B98E75] border-t-transparent rounded-full animate-spin" />
+//         </div>
+//       }
+//     >
+//       <HomeDecorContent />
+//     </Suspense>
+//   );
+// }
+
+// app/home-decor/page.tsx
+import { Suspense } from "react";
+import HomeDecorContent from "./HomeDecorContent";
+
 
 export default function HomeDecorPage() {
   return (
