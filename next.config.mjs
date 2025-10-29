@@ -9,7 +9,7 @@ const nextConfig = {
     unoptimized: true, // ✅ disables Next's image optimizer for static exports
   },
   // output: "export", // ✅ tells Next.js to do a static HTML export
-  output: "standalone", 
+  // output: "standalone", 
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
 };
