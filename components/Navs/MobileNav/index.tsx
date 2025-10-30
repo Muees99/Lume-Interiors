@@ -10,6 +10,9 @@ import { BsX } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
 import TalkModal from "../../TalkModal";
 import { FaMicrophone } from "react-icons/fa";
+import { usePathname } from "next/navigation";
+
+
 
 
 
@@ -20,6 +23,9 @@ const MobileNav = () => {
   // const searchParams = useSearchParams().get("path");
   const searchParams = useSearchParams();
   const path = searchParams.get("path");
+  const getNavPath = (link: string) => (link === "home" ? "/" : `/${link}`);
+  const pathname = usePathname();
+
 
   // useEffect(() => {
   //   if (searchParams) setIsActive(searchParams);
@@ -28,6 +34,12 @@ const MobileNav = () => {
   useEffect(() => {
     if (path) setIsActive(path);
   }, [path]);
+
+  useEffect(() => {
+    // Remove leading slash, e.g., '/projects' -> 'projects'
+    const current = pathname === "/" ? "home" : pathname.slice(1);
+    setIsActive(current);
+  }, [pathname]);
 
   // Track active path
   useEffect(() => {
@@ -108,12 +120,42 @@ const MobileNav = () => {
                     show: { opacity: 1, x: 0 },
                   }}
                 >
-                  <Link
+                  {/* <Link
                     href={
                       link.link === "home"
                         ? "/?path=home"
                         : `/${link.link}?path=${link.link}`
                     }
+                    onClick={() => {
+                      setIsActive(link.link);
+                      setShowMobileMenu(false);
+                    }}
+                    className={cn(
+                      "relative text-lg font-medium capitalize tracking-wide transition-all duration-300",
+                      "hover:text-gray-300 hover:translate-x-1",
+                      isActive === link.link ? "text-[#E0C097]" : "text-white"
+                    )}
+                  >
+                    {link.label}
+                  </Link> */}
+
+                  {/* <Link
+                    href={link.link === "home" ? "/" : `/${link.link}`}
+                    onClick={() => {
+                      setIsActive(link.link);
+                      setShowMobileMenu(false);
+                    }}
+                    className={cn(
+                      "relative text-lg font-medium capitalize tracking-wide transition-all duration-300",
+                      "hover:text-gray-300 hover:translate-x-1",
+                      isActive === link.link ? "text-[#E0C097]" : "text-white"
+                    )}
+                  >
+                    {link.label}
+                  </Link> */}
+
+                  <Link
+                    href={getNavPath(link.link)}
                     onClick={() => {
                       setIsActive(link.link);
                       setShowMobileMenu(false);

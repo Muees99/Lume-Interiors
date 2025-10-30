@@ -4,7 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars } from "react-icons/fa";
-import { useRouter, useSearchParams } from "next/navigation";
+// import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+
 import { useStateCtx } from "../../../context/StateContext";
 import cn from "../../../app/utils/twcx";
 import { NAVLINKS } from "../../../libs/constants";
@@ -12,6 +14,7 @@ import MobileNav from "../MobileNav";
 import Logo from "../../../public/assets/logo.png"
 import { FaMicrophone } from "react-icons/fa";
 import TalkModal from "../../TalkModal";
+
 
 const Navbar = () => {
   const router = useRouter();
@@ -21,9 +24,11 @@ const Navbar = () => {
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [scrolled, setScrolled] = useState(false);
+  const getNavPath = (link: string) => (link === "home" ? "/" : `/${link}`);
+
   // const searchParams = useSearchParams().get("path");
-  const searchParams = useSearchParams();
-  const path = searchParams.get("path");
+  // const searchParams = useSearchParams();
+  // const path = searchParams.get("path");
 
 
 
@@ -33,9 +38,21 @@ const Navbar = () => {
   //     setIsActive(searchParams);
   //   }
   // }, [searchParams]);
+  // useEffect(() => {
+  //     if (path) setIsActive(path);
+  //   }, [path]);
+
+  // const pathname = usePathname();
+  const pathname = usePathname();
+  const currentPath = pathname === "/" ? "home" : pathname.slice(1);
+
+
   useEffect(() => {
-      if (path) setIsActive(path);
-    }, [path]);
+    // e.g., "/projects" → "projects"
+    const current = pathname === "/" ? "home" : pathname.split("/")[1];
+    setIsActive(current);
+  }, [pathname]);
+
 
   // hide/reveal on scroll
   useEffect(() => {
@@ -92,21 +109,26 @@ const Navbar = () => {
               {NAVLINKS.map((link) => (
                 <Link
                   key={link.id}
-                  href={
-                    link.link === "home"
-                      ? "/?path=home"
-                      : `${link.link}?path=${link.link}`
-                  }
-                  onClick={() => setIsActive(link.link)}
+                  href={getNavPath(link.link)}
+                  // className={cn(
+                  //   "text-sm font-medium uppercase tracking-wider transition-all duration-300",
+                  //   currentPath === link.link
+                  //     ? "text-[#E0C097]"
+                  //     : "text-gray-400 hover:text-white"
+                  // )}
+
                   className={cn(
-                    "text-white text-lg capitalize relative font-light before:bg-white before:w-[0%] before:h-[1px] before:absolute before:-bottom-1 before:left-0 before:transition-all before:duration-500",
-                    isActive === link.link ? "before:w-full text-gray-200" : "",
-                    "hover:text-gray-300 hover:before:w-full transition-all"
+                    "text-gray-300 text-lg capitalize relative font-light before:bg-[#E0C097] before:w-[0%] before:h-[1px] before:absolute before:-bottom-1 before:left-0 before:transition-all before:duration-500",
+                    currentPath === link.link
+                      ? "before:w-full text-[#E0C097]"
+                      : "",
+                    "hover:text-gray-600 hover:before:w-full transition-all"
                   )}
                 >
                   {link.label}
                 </Link>
               ))}
+
               {/* Talk to Me Button */}
               <button
                 onClick={() => setShowModal(true)}

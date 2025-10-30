@@ -60,7 +60,7 @@ export default function UnderConstruction({
         </motion.div>
       </div>
 
-      {/* 🏗️ Title */}
+      {/*Title */}
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ export default function UnderConstruction({
         {title} <span className="text-[#b58b57]">Page</span>
       </motion.h1>
 
-      {/* 🖼️ Image */}
+      {/*Image */}
       <motion.div
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -85,7 +85,7 @@ export default function UnderConstruction({
         />
       </motion.div>
 
-      {/* 🧱 Message */}
+      {/* Message */}
       <p className="text-gray-600 max-w-md mb-10 z-10 text-lg leading-relaxed">
         We&apos;re currently working on this section to deliver something
         exceptional. Check back soon for updates and exclusive reveals.

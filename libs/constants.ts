@@ -21,3 +21,26 @@ export const FOOTER_LINKS: FooterLinkProps = {
   link: "",
   label: "",
 };
+
+
+// import { NavLinkProps, FooterLinkProps } from "../@types";
+
+// export const NAVLINKS: NavLinkProps[] = [
+//   { id: 1, link: "/", label: "Home" },
+//   { id: 2, link: "/services", label: "Services" },
+//   { id: 3, link: "/projects", label: "Projects" },
+//   { id: 4, link: "/news", label: "News" },
+//   { id: 5, link: "/contact", label: "Contact" },
+// ];
+
+// export const FOOTER_LINKS: FooterLinkProps = {
+//   ourServices: [
+//     { id: 1, link: "/architecture", label: "Architecture" },
+//     { id: 2, link: "/interior-design", label: "Interior Design" },
+//     { id: 3, link: "/home-decor", label: "Home Decor" },
+//     { id: 4, link: "/urban-design", label: "Urban Design" },
+//     { id: 5, link: "/design-system", label: "Design System" },
+//   ],
+//   link: "",
+//   label: "",
+// };
