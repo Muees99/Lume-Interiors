@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars } from "react-icons/fa";
-// import { useRouter, useSearchParams } from "next/navigation";
 import { useRouter, usePathname } from "next/navigation";
 
 import { useStateCtx } from "../../../context/StateContext";

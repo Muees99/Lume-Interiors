@@ -22,9 +22,6 @@ const MobileNav = () => {
   const getNavPath = (link: string) => (link === "home" ? "/" : `/${link}`);
   const pathname = usePathname();
 
-  // useEffect(() => {
-  //   if (searchParams) setIsActive(searchParams);
-  // }, [searchParams]);
   // Track active path
   useEffect(() => {
     if (path) setIsActive(path);
