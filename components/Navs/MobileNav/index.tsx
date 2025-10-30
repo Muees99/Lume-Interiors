@@ -12,10 +12,6 @@ import TalkModal from "../../TalkModal";
 import { FaMicrophone } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 
-
-
-
-
 const MobileNav = () => {
   const { showMobileMenu, setShowMobileMenu } = useStateCtx();
   const [isActive, setIsActive] = useState("");
@@ -25,7 +21,6 @@ const MobileNav = () => {
   const path = searchParams.get("path");
   const getNavPath = (link: string) => (link === "home" ? "/" : `/${link}`);
   const pathname = usePathname();
-
 
   // useEffect(() => {
   //   if (searchParams) setIsActive(searchParams);
@@ -120,40 +115,6 @@ const MobileNav = () => {
                     show: { opacity: 1, x: 0 },
                   }}
                 >
-                  {/* <Link
-                    href={
-                      link.link === "home"
-                        ? "/?path=home"
-                        : `/${link.link}?path=${link.link}`
-                    }
-                    onClick={() => {
-                      setIsActive(link.link);
-                      setShowMobileMenu(false);
-                    }}
-                    className={cn(
-                      "relative text-lg font-medium capitalize tracking-wide transition-all duration-300",
-                      "hover:text-gray-300 hover:translate-x-1",
-                      isActive === link.link ? "text-[#E0C097]" : "text-white"
-                    )}
-                  >
-                    {link.label}
-                  </Link> */}
-
-                  {/* <Link
-                    href={link.link === "home" ? "/" : `/${link.link}`}
-                    onClick={() => {
-                      setIsActive(link.link);
-                      setShowMobileMenu(false);
-                    }}
-                    className={cn(
-                      "relative text-lg font-medium capitalize tracking-wide transition-all duration-300",
-                      "hover:text-gray-300 hover:translate-x-1",
-                      isActive === link.link ? "text-[#E0C097]" : "text-white"
-                    )}
-                  >
-                    {link.label}
-                  </Link> */}
-
                   <Link
                     href={getNavPath(link.link)}
                     onClick={() => {
@@ -179,13 +140,6 @@ const MobileNav = () => {
               transition={{ delay: 0.4 }}
               className="mt-10 border-t border-gray-700 pt-6"
             >
-              {/* <button
-                onClick={handleCloseMenu}
-                className="w-full bg-[#E0C097] text-black font-semibold py-3 rounded-full hover:bg-[#d6b68f] transition"
-              >
-                Call Anytime
-              </button> */}
-              {/* Talk to Me Button */}
               <button
                 onClick={() => setShowModal(true)}
                 className="ml-6 flex items-center gap-2 bg-gradient-to-r from-[#7a7265] to-[#a59a86] text-black font-semibold px-6 py-2 rounded-full hover:bg-white transition-all duration-300 shadow-lg relative"
