@@ -11,10 +11,9 @@ import { useStateCtx } from "../../../context/StateContext";
 import cn from "../../../app/utils/twcx";
 import { NAVLINKS } from "../../../libs/constants";
 import MobileNav from "../MobileNav";
-import Logo from "../../../public/assets/logo.png"
+import Logo from "../../../public/assets/logo.png";
 import { FaMicrophone } from "react-icons/fa";
 import TalkModal from "../../TalkModal";
-
 
 const Navbar = () => {
   const router = useRouter();
@@ -26,33 +25,14 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const getNavPath = (link: string) => (link === "home" ? "/" : `/${link}`);
 
-  // const searchParams = useSearchParams().get("path");
-  // const searchParams = useSearchParams();
-  // const path = searchParams.get("path");
-
-
-
-  // detect page change for active state
-  // useEffect(() => {
-  //   if (searchParams) {
-  //     setIsActive(searchParams);
-  //   }
-  // }, [searchParams]);
-  // useEffect(() => {
-  //     if (path) setIsActive(path);
-  //   }, [path]);
-
-  // const pathname = usePathname();
   const pathname = usePathname();
   const currentPath = pathname === "/" ? "home" : pathname.slice(1);
-
 
   useEffect(() => {
     // e.g., "/projects" → "projects"
     const current = pathname === "/" ? "home" : pathname.split("/")[1];
     setIsActive(current);
   }, [pathname]);
-
 
   // hide/reveal on scroll
   useEffect(() => {
@@ -110,13 +90,6 @@ const Navbar = () => {
                 <Link
                   key={link.id}
                   href={getNavPath(link.link)}
-                  // className={cn(
-                  //   "text-sm font-medium uppercase tracking-wider transition-all duration-300",
-                  //   currentPath === link.link
-                  //     ? "text-[#E0C097]"
-                  //     : "text-gray-400 hover:text-white"
-                  // )}
-
                   className={cn(
                     "text-gray-300 text-lg capitalize relative font-light before:bg-[#E0C097] before:w-[0%] before:h-[1px] before:absolute before:-bottom-1 before:left-0 before:transition-all before:duration-500",
                     currentPath === link.link
@@ -150,7 +123,6 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Nav */}
-            {/* {MobileNav("arg1", "arg2", "arg3")} */}
             <MobileNav />
           </nav>
           {/* Modal */}
