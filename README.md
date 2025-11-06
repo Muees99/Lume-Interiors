@@ -62,7 +62,7 @@ It’s designed for users to **explore architectural works**, **visualize modern
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/mueesalabi/lumia-interior-design.git
+git clone https://github.com/Muees99/Lume-Interiors.git
 cd lumia-interior-design
 
 npm install
