@@ -8,7 +8,7 @@ export function generateStaticParams() {
   }));
 }
 
-// ✅ Page component
+// Page component
 export default function ArchitectureDetailPage({
   params,
 }: {
@@ -16,7 +16,7 @@ export default function ArchitectureDetailPage({
 }) {
   const project = architectureProjects.find((p) => p.slug === params.slug);
 
-  // If slug doesn't match any project, trigger Next.js 404
+  // If slug doesn't match any project, trigger (not-Found Page)
   if (!project) {
     notFound();
   }
