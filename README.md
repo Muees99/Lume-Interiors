@@ -1,6 +1,6 @@
 # 🏛️ Lumé Interiors Design
 
-**Lume-Interior Design** is a minimal architectural and interior design platform built with **Next.js**, **Tailwind CSS**, and **Framer Motion**.  
+**Lumé-Interior Design** is a minimal architectural and interior design platform built with **Next.js**, **Tailwind CSS**, and **Framer Motion**.  
 It showcases breathtaking architectural projects, building constructions, and interior concepts — while also featuring a curated **home décor shop** where users can explore and purchase beautiful design pieces.  
 
 With an added layer of innovation, users can **interact with the platform using their voice** through the **"Talk to Me"** button on the navigation bar.
