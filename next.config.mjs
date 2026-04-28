@@ -16,7 +16,7 @@ const nextConfig = {
   },
   // output: "export", // ✅ tells Next.js to do a static HTML export
   // output: "standalone", 
-  eslint: { ignoreDuringBuilds: true },
+  // eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
 };
 
