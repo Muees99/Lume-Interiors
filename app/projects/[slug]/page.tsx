@@ -1,3 +1,26 @@
+// import { notFound } from "next/navigation";
+// import { projects, getProjectBySlug } from "./projectData";
+// import ProjectContent from "./ProjectContent";
+
+// export function generateStaticParams() {
+//   return projects.map((p) => ({ slug: p.slug }));
+// }
+
+// export function generateMetadata({ params }: { params: { slug: string } }) {
+//   const project = getProjectBySlug(params.slug);
+//   if (!project) return { title: "Project Not Found" };
+//   return {
+//     title: `${project.title} | Lumé Interiors`,
+//     description: project.description,
+//   };
+// }
+
+// export default function ProjectPage({ params }: { params: { slug: string } }) {
+//   const project = getProjectBySlug(params.slug);
+//   if (!project) notFound();
+//   return <ProjectContent project={project} />;
+// }
+
 import { notFound } from "next/navigation";
 import { projects, getProjectBySlug } from "./projectData";
 import ProjectContent from "./ProjectContent";
@@ -6,8 +29,13 @@ export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const project = getProjectBySlug(params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) return { title: "Project Not Found" };
   return {
     title: `${project.title} | Lumé Interiors`,
@@ -15,8 +43,13 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) notFound();
   return <ProjectContent project={project} />;
 }
