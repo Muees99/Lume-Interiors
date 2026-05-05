@@ -169,7 +169,7 @@ export default function ServicesPage() {
         </div>
       }
     >
-      <ServicesContent />
+      <ServicesContent/>
     </Suspense>
   );
 }

@@ -15,7 +15,7 @@ export default function ArticleContent({ article }: { article: any }) {
       >
         <Link
           href="/news"
-          className="text-[#B98E75] font-medium hover:underline mb-8 inline-block text-lg"
+          className="text-[#B98E75] font-medium hover:underline py-8 inline-block text-lg"
         >
           ← Back to News
         </Link>
