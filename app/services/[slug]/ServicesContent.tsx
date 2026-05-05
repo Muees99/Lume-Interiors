@@ -16,12 +16,12 @@ interface ServiceProps {
 
 const ServicesContent: React.FC<ServiceProps> = ({ service }) => {
   return (
-    <section className="min-h-screen bg-[#f9f6f3] py-16 px-6 md:px-20">
+    <section className="min-h-screen bg-[#f9f6f3] py-20 px-6 md:px-20">
       <Link
         href="/services"
         className="inline-block mb-8 text-[#b58b57] font-semibold hover:underline"
       >
-        ← Back to Services
+        ← Back to Services 
       </Link>
 
       <motion.div
